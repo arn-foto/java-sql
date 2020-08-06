@@ -10,6 +10,8 @@ A student that completes this project shows that they can:
 
 Working with SQL
 
+testing testing 1 2 3
+
 ## Instructions
 
 Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same data we used during the guided project.
