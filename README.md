@@ -237,9 +237,9 @@ Table Name: Pet Table
 
 Table Name:Pet and Owners Table
 | Person ID  |Fenced Yard |City Dweller|      
-|------------|------------|------------|    __person ID who has fenced yard or dweller
+|------------|------------|------------|    
 | 1          |  false     |    true    |          
-| 2          |  false     |    false   |          
+| 2          |  false     |    false   |    person ID who has fenced yard or dweller      
 | 3          |   true     |    false   |            
 
 
