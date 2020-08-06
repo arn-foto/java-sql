@@ -218,51 +218,32 @@ Below are some empty tables to be used to normalize the database
 
 Table Name: Person table
 
-| Person ID  |Person Name |City Dweller|Fenced Yard |            |            |            |            |            |
-|------------|------------|------------|------------|------------|------------|------------|------------|------------|
-|1           |Jane        |Yes         |No          |            |            |            |            |            |
-|2           |Bob         |No          |No          |            |            |            |            |            |
-|3           |Sam         |No          |Yes         |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
+| Person ID  |Person Name |   Pets     |
+|------------|------------|------------|
+|1           |Jane        |     3      |
+|2           |Bob         |     1      |
+|3           |Sam         |     3      |
 
 Table Name: Pet Table 
 
-| Pet ID     | Pet Name   | Pet Type   |            |            |            |            |            |            |
-|------------|------------|------------|------------|------------|------------|------------|------------|------------|
-|1           |Ellie       |Dog         |            |            |            |            |            |            |
-|2           |Joe         |Horse       |            |            |            |            |            |            |
-|3           |Ginger      |Dog         |            |            |            |            |            |            |
-|4           |Tiger       |Cat         |            |            |            |            |            |            |
-|5           |MissKitty   |Cat         |            |            |            |            |            |            |
-|6           |Toby        |Turtle      |            |            |            |            |            |            |
-|7           |Bubble      |Fish        |            |            |            |            |            |            |
+| Pet ID     | Pet Name   | Pet Type   | Person ID  |     
+|------------|------------|------------|------------|
+|1           |Ellie       |Dog         |     1      |        
+|2           |Joe         |Horse       |     2      |           
+|3           |Ginger      |Dog         |     3      |            
+|4           |Tiger       |Cat         |     1      |          
+|5           |MissKitty   |Cat         |     3      |           
+|6           |Toby        |Turtle      |     1      |            
+|7           |Bubble      |Fish        |     3      |            
 
 Table Name:Pet and Owners Table
 
-|   Pet ID   |  Person ID |            |            |            |            |            |            |            |
-|------------|------------|------------|------------|------------|------------|------------|------------|------------|
-| 1          |  1         |            |            |            |            |            |            |            |
-| 2          |  2         |            |            |            |            |            |            |            |
-| 3          |  3         |            |            |            |            |            |            |            |
-| 4          |  1         |            |            |            |            |            |            |            |
-| 5          |  3         |            |            |            |            |            |            |            |
-| 6          |  1         |            |            |            |            |            |            |            |
-| 7          |  3         |            |            |            |            |            |            |            |
+|   Pet ID   |Fenced Yard |City Dweller|      
+|------------|------------|------------|
+| 1          |  false     |    true    |          
+| 2          |  false     |    false   |          
+| 3          |   true     |    false   |            
 
-Table Name:
-
-|            |            |            |            |            |            |            |            |            |
-|------------|------------|------------|------------|------------|------------|------------|------------|------------|
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
 
 ---
 
@@ -271,6 +252,13 @@ Table Name:
 * [ ] ***delete all customers that have no orders. Should delete 2 (or 3 if you haven't deleted the record added) records***
 
 ```SQL
+     DELETE
+     FROM customers
+     WHERE customer_id IN
+    (SELECT c.customer_id
+     FROM customers c FULL JOIN orders o
+     ON o.Customer_ID = c.Customer_ID
+     WHERE o.Order_Date is NULL)
 
 ```
 
