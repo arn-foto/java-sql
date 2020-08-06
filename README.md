@@ -37,7 +37,7 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
   </details>
 
 ```SQL
-SELECT contact_name,city
+SELECT contact_name, city, country
 FROM customers 
 WHERE city = 'London'
 
@@ -51,7 +51,7 @@ WHERE city = 'London'
   </details>
 
 ```SQL
-SELECT contact_name, postal_code
+SELECT contact_name, postal_code , city
 FROM customers 
 WHERE postal_code = 1010
 
@@ -79,7 +79,7 @@ WHERE supplier_id = 11
   </details>
 
 ```SQL
-SELECT order_id, order_date
+SELECT frieght, order_date
 FROM orders
 ORDER BY order_date DESC
 
@@ -95,7 +95,7 @@ ORDER BY order_date DESC
   </details>
 
 ```SQL
-SELECT *
+SELECT contact_name
 FROM suppliers
 WHERE length(company_name) > 20
 
@@ -111,7 +111,7 @@ WHERE length(company_name) > 20
   </details>
 
 ```SQL
-SELECT *
+SELECT contact_title
 FROM customers
 WHERE UPPER(contact_title) LIKE ('%MARKET%')
 
@@ -146,7 +146,7 @@ INSERT INTO customers(customer_id, company_name, contact_name, address, city, po
 ```SQL
 UPDATE customers
 SET postal_code = '11122'
-WHERE contact_name = 'Bilbo Baggins'
+WHERE contact_name = 'SHIRE'
 
 ```
 
@@ -159,11 +159,11 @@ WHERE contact_name = 'Bilbo Baggins'
   </details>
 
 ```SQL
-SELECT c.company_name, COUNT(o.customer_id) as order_total
-FROM orders o JOIN customers c
-ON o.customer_id = c.customer_id
-GROUP BY c.company_name
-ORDER BY C.company_name
+ SELECT c.company_name, COUNT(o.order_id)
+  FROM orders o JOIN customers c
+  ON o.customer_id = c.customer_id
+  GROUP BY c.company_name
+  ORDER BY COUNT(o.order_id) DESC
 
 ```
 
@@ -175,11 +175,11 @@ ORDER BY C.company_name
   </details>
 
 ```SQL
-SELECT c.contact_name, COUNT(o.customer_id) as order_total
-FROM orders o JOIN customers c
-ON o.customer_id = c.customer_id
-GROUP BY c.contact_name
-ORDER BY 2 desc
+  SELECT c.contact_name, COUNT(o.order_id)
+  FROM orders o JOIN customers c
+  ON o.customer_id = c.customer_id
+  GROUP BY c.contact_name
+  ORDER BY COUNT(o.order_id) DESC
 
 ```
 
@@ -191,11 +191,11 @@ ORDER BY 2 desc
   </details>
 
 ```SQL
-SELECT c.city, COUNT(c.city) as total
-FROM orders o JOIN customers c
-ON o.customer_id = c.customer_id
-GROUP BY c.city
-ORDER BY c.city
+SELECT c.city, COUNT(o.order_id)
+  FROM orders o JOIN customers c
+  ON o.customer_id = c.customer_id
+  GROUP BY c.city
+  ORDER BY COUNT(o.order_id) DESC
 
 ```
 
