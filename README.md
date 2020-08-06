@@ -252,13 +252,7 @@ Table Name:Pet and Owners Table
 * [ ] ***delete all customers that have no orders. Should delete 2 (or 3 if you haven't deleted the record added) records***
 
 ```SQL
-     DELETE
-     FROM customers
-     WHERE customer_id IN
-    (SELECT c.customer_id
-     FROM customers c FULL JOIN orders o
-     ON o.Customer_ID = c.Customer_ID
-     WHERE o.Order_Date is NULL)
+     
 
 ```
 
