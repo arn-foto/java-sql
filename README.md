@@ -236,7 +236,6 @@ Table Name: Pet Table
 |Bubble      |Fish        |     3      |            
 
 Table Name:Pet and Owners Table
-
 | Person ID  |Fenced Yard |City Dweller|      
 |------------|------------|------------|     person ID who has fenced yard or dweller
 | 1          |  false     |    true    |          
