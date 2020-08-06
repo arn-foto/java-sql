@@ -216,7 +216,7 @@ Below are some empty tables to be used to normalize the database
 * Not all of the cells will contain data in the final solution
 * Feel free to edit these tables as necessary
 
-Table Name: Person table
+Table Name: Person Pet quantity table
 
 | Person ID  |Person Name |   Pets     |
 |------------|------------|------------|
@@ -224,7 +224,8 @@ Table Name: Person table
 |2           |Bob         |     1      |  has 1 pet
 |3           |Sam         |     3      |  has 3 pets
 
-Table Name: Pet Table 
+Table Name: Pet Name + Pet Type Table
+
 | Pet Name   | Pet Type   | Person ID  |     
 |------------|------------|------------| 
 |Ellie       |Dog         |     1      |        ___ is a ___ that belongs to person ___
@@ -235,7 +236,8 @@ Table Name: Pet Table
 |Toby        |Turtle      |     1      |            
 |Bubble      |Fish        |     3      |            
 
-Table Name:Pet and Owners Table
+Table Name: Fenced + City Dweller table
+
 | Person ID  |Fenced Yard |City Dweller|      
 |------------|------------|------------|    
 | 1          |  false     |    true    |          
