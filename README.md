@@ -51,9 +51,9 @@ WHERE city = 'London'
   </details>
 
 ```SQL
-SELECT contact_name, postal_code , city
-FROM customers 
-WHERE postal_code = 1010
+  SELECT contact_name, city, country, postal_code
+  FROM customers
+  WHERE postal_code = '1010'
 
 ```
 
@@ -65,9 +65,9 @@ WHERE postal_code = 1010
   </details>
 
 ```SQL
-SELECT contact_name, phone
-FROM suppliers
-WHERE supplier_id = 11
+  SELECT contact_name, phone
+  FROM suppliers
+  WHERE supplier_id = '11'
 
 ```
 
