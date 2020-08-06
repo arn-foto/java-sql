@@ -79,7 +79,7 @@ WHERE city = 'London'
   </details>
 
 ```SQL
-SELECT frieght, order_date
+SELECT order_date
 FROM orders
 ORDER BY order_date DESC
 
