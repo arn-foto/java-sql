@@ -220,26 +220,25 @@ Table Name: Person table
 
 | Person ID  |Person Name |   Pets     |
 |------------|------------|------------|
-|1           |Jane        |     3      |
-|2           |Bob         |     1      |
-|3           |Sam         |     3      |
+|1           |Jane        |     3      |  has 3 pets
+|2           |Bob         |     1      |  has 1 pet
+|3           |Sam         |     3      |  has 3 pets
 
 Table Name: Pet Table 
-
-| Pet ID     | Pet Name   | Pet Type   | Person ID  |     
-|------------|------------|------------|------------|
-|1           |Ellie       |Dog         |     1      |        
-|2           |Joe         |Horse       |     2      |           
-|3           |Ginger      |Dog         |     3      |            
-|4           |Tiger       |Cat         |     1      |          
-|5           |MissKitty   |Cat         |     3      |           
-|6           |Toby        |Turtle      |     1      |            
-|7           |Bubble      |Fish        |     3      |            
+| Pet Name   | Pet Type   | Person ID  |     
+|------------|------------|------------| 
+|Ellie       |Dog         |     1      |        ___ is a ___ that belongs to person ___
+|Joe         |Horse       |     2      |           
+|Ginger      |Dog         |     3      |            
+|Tiger       |Cat         |     1      |          
+|MissKitty   |Cat         |     3      |           
+|Toby        |Turtle      |     1      |            
+|Bubble      |Fish        |     3      |            
 
 Table Name:Pet and Owners Table
 
-|   Pet ID   |Fenced Yard |City Dweller|      
-|------------|------------|------------|
+| Person ID  |Fenced Yard |City Dweller|      
+|------------|------------|------------|     person ID who has fenced yard or dweller
 | 1          |  false     |    true    |          
 | 2          |  false     |    false   |          
 | 3          |   true     |    false   |            
